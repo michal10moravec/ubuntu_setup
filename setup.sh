@@ -7,6 +7,8 @@ update_system () {
 
 install_tools () {
 	sudo apt install -y vim git apt-transport-https curl wget gpg gh
+	git config --global user.name "Michal Moravec"
+	git config --global user.email "michal10moravec@gmail.com"
 }
 
 install_webdev_tools () {
