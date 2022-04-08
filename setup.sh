@@ -24,6 +24,8 @@ install_webdev_tools () {
 	sudo apt install -y postgresql-14
 	sudo -u postgres createuser --interactive
 	sudo -u postgres createdb browsergamedb
+	#setup redis
+	sudo apt install -y redis-server
 }
 
 install_brave () {
