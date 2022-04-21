@@ -16,15 +16,18 @@ install_webdev_tools () {
 	export NVM_DIR="$HOME/.nvm"
 	[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 	[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-	#setup nodejs
+	# setup nodejs
 	nvm install 16
-	#setup yarn
+	# setup yarn
 	npm install -g yarn
-	#setup postgresql
+	# setup postgresql
 	sudo apt install -y postgresql-14
 	sudo -u postgres createuser --interactive
-	sudo -u postgres createdb browsergamedb
-	#setup redis
+	sudo -u postgres createdb browser-game-db
+	# set password for user in the psql console:
+	psql -U michal -d browser-game-db -c "\password"
+
+	# setup redis
 	sudo apt install -y redis-server
 }
 
@@ -64,11 +67,16 @@ setup_steam () {
 	sudo apt install -y steam
 }
 
-#update_system
-#install_tools
-#install_webdev_tools
-#install_brave
-#install_vs_code
-#setup_github
-#setup_personal_projects
-#setup_steam
+setup_discord () {
+	sudo snap install discord
+}
+
+# update_system
+# install_tools
+# install_webdev_tools
+# install_brave
+# install_vs_code
+# setup_github
+# setup_personal_projects
+# setup_steam
+# setup_discord
