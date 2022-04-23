@@ -71,6 +71,11 @@ setup_discord () {
 	sudo snap install discord
 }
 
+setup_graphics_editors () {
+	sudo apt install -y inkscape
+	sudo apt install -y gimp
+}
+
 # update_system
 # install_tools
 # install_webdev_tools
@@ -80,3 +85,4 @@ setup_discord () {
 # setup_personal_projects
 # setup_steam
 # setup_discord
+# setup_graphics_editors
